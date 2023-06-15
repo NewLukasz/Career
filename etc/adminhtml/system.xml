@@ -27,6 +27,53 @@
                     <label>Module Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="open_positions"
+                       translate="label"
+                       type="select"
+                       sortOrder="1"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0">
+                    <label>Open positions</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                    <comment>List of open positions, semi-colon(;) separated. Example - 'Developer;Warehouse worker;Machine operator;'</comment>
+                </field>
+            </group>
+            <group id="email_config"
+                   translate="label"
+                   type="text"
+                   sortOrder="20"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Emails configuration</label>
+                <depends>
+                    <field id="stlk_career/general/enable">1</field>
+                </depends>
+                <field id="sender_name"
+                       translate="label"
+                       type="text"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Sender name</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="sender_email"
+                       translate="label"
+                       type="text"
+                       sortOrder="2"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Sender email address</label>
+                    <validate>required-entry validate-emails</validate>
+                    <comment>Insert email address which from email will be sent.</comment>
+                </field>
                 <field id="recruitment_email_addresses"
                        translate="label"
                        type="text"
@@ -36,6 +83,7 @@
                        showInStore="1">
                     <label>Recruitment email addresses</label>
                     <comment>List of email addresses where application will be sent. You can insert multiple addresses semi-colon(;) separated. Example - 'first@example.com;second@example' </comment>
+                    <validate>required-entry validate-emails-semicolon-separated</validate>
                 </field>
             </group>
         </section>
