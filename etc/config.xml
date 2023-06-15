@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <stlk_career>
+            <general>
+                <enable>0</enable>
+                <open_positions>Developer;Warehouse worker;Machine operator;</open_positions>
+            </general>
+            <email_config>
+                <sender_name>Career department</sender_name>
+                <sender_email>sender@example.com</sender_email>
+                <recruitment_email_addresses>first@example.com;second@example.com</recruitment_email_addresses>
+            </email_config>
+        </stlk_career>
+    </default>
+</config>
