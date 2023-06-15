@@ -29,7 +29,7 @@
                 </field>
                 <field id="open_positions"
                        translate="label"
-                       type="select"
+                       type="text"
                        sortOrder="1"
                        showInDefault="1"
                        showInWebsite="0"
@@ -66,7 +66,7 @@
                 <field id="sender_email"
                        translate="label"
                        type="text"
-                       sortOrder="2"
+                       sortOrder="20"
                        showInDefault="1"
                        showInWebsite="1"
                        showInStore="1">
@@ -77,7 +77,7 @@
                 <field id="recruitment_email_addresses"
                        translate="label"
                        type="text"
-                       sortOrder="2"
+                       sortOrder="30"
                        showInDefault="1"
                        showInWebsite="1"
                        showInStore="1">
