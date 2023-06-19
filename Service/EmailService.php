@@ -19,6 +19,14 @@ use Magento\Framework\Translate\Inline\StateInterface;
 
 class EmailService implements EmailServiceInterface
 {
+    /**
+     * @param StoreRepositoryInterface $storeRepository
+     * @param Escaper $escaper
+     * @param AreaList $areaList
+     * @param State $appState
+     * @param StateInterface $inlineTranslation
+     * @param TransportBuilder $transportBuilder
+     */
     public function __construct(
         private StoreRepositoryInterface $storeRepository,
         private Escaper                  $escaper,

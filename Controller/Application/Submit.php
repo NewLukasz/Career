@@ -15,6 +15,12 @@ use Magento\Framework\Controller\Result\Redirect;
 
 class Submit implements HttpPostActionInterface
 {
+    /**
+     * @param RequestInterface $request
+     * @param EmailService $emailService
+     * @param ConfigProvider $configProvider
+     * @param RedirectFactory $redirectFactory
+     */
     public function __construct(
         private RequestInterface $request,
         private EmailService $emailService,
