@@ -1,0 +1,54 @@
+<!--@subject {{trans "New application has been sent."}} @-->
+<!--@vars {
+"var name":"Name",
+"var surname":"Surname",
+"var email:":"Email",
+"var position:":"Position",
+"var message:":"Message",
+} @-->
+
+<table>
+    <tr>
+        <th>{{trans "New application"}}</th>
+    </tr>
+    <tr class="name">
+        <td>
+            <p>{{trans
+                "Name: %name"
+                name=$name
+                |raw}}</p>
+        </td>
+    </tr>
+    <tr class="surname">
+        <td>
+            <p>{{trans
+                "Surname: %surname"
+                surname=$surname
+                |raw}}</p>
+        </td>
+    </tr>
+    <tr class="email">
+        <td>
+            <p>{{trans
+                "Email: %email"
+                email=$email
+                |raw}}</p>
+        </td>
+    </tr>
+    <tr class="position">
+        <td>
+            <p>{{trans
+                "Position: %position"
+                position=$position
+                |raw}}</p>
+        </td>
+    </tr>
+    <tr class="message">
+        <td>
+            <p>{{trans
+                "Message: %message"
+                message=$message
+                |raw}}</p>
+        </td>
+    </tr>
+</table>

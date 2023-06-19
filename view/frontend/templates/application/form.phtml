@@ -7,55 +7,62 @@ declare(strict_types=1);
 $formViewModel = $block->getData('form_view_model');
 ?>
 
-<?php if($formViewModel->checkIfFormSubmittedWithSuccess()): ?>
+<?php if ($formViewModel->checkIfFormSubmittedWithSuccess()): ?>
     <div class="career-application-form-success">
-        <div style="background-color:#90EE90;">
-            <h2 style="color:white;"><?= __('The form has been sent successfully.')?></h2>
-        </div>
+        <h2><?= __('The form has been sent successfully.') ?></h2>
+    </div>
+<?php else: ?>
+    <div class="career-application-form-fail">
+        <h2><?= __('Something went wrong contact with customer service office.') ?></h2>
     </div>
 <?php endif; ?>
 <div class="career-application-form">
     <form
         class="application form"
-        action="<?= $block->getUrl('career/application/submit');?>"
+        action="<?= $block->getUrl('career/application/submit'); ?>"
         id="application-form"
         method="post">
-        <h3><?= __('Application form')?></h3>
+        <h3><?= __('Application form') ?></h3>
         <div class="field name required">
             <label class="label" for="name"><span><?= __('Name') ?></span></label>
             <div class="control">
-                <input name="name" id="name" title="<?= __('Name') ?>" class="input-text" type="text" data-validate="{required:true}" >
+                <input name="name" id="name" title="<?= __('Name') ?>" class="input-text" type="text"
+                       data-validate="{required:true}">
             </div>
         </div>
         <div class="field surname required">
             <label class="label" for="surname"><span><?= __('Surname') ?></span></label>
             <div class="control">
-                <input name="surname" id="surname" title="<?= __('Surname') ?>" class="input-text" type="text" data-validate="{required:true}" >
+                <input name="surname" id="surname" title="<?= __('Surname') ?>" class="input-text" type="text"
+                       data-validate="{required:true}">
             </div>
         </div>
         <div class="field email required">
             <label class="label" for="email"><span><?= __('Email address') ?></span></label>
             <div class="control">
-                <input name="email" id="email" title="<?= __('Email address') ?>" class="input-text" type="text" data-validate="{required:true, 'validate-email':true}" >
+                <input name="email" id="email" title="<?= __('Email address') ?>" class="input-text" type="text"
+                       data-validate="{required:true, 'validate-email':true}">
             </div>
         </div>
         <div class="field positions">
             <label class="label" for="surname"><span><?= __('Position') ?></span></label>
-            <select name="position" id="position" data-validate="{required:true}" >
-                <?php foreach ($formViewModel->getOpenPositions() as $openPosition){
-                    echo "<option value=".$formViewModel->changeSpacesToUnderscoreForDivValue($openPosition)." >".$openPosition."</option>";
+            <select name="position" id="position" data-validate="{required:true}">
+                <?php foreach ($formViewModel->getOpenPositions() as $openPosition) {
+                    echo "<option value=" . $formViewModel->changeSpacesToUnderscoreForDivValue($openPosition) . " >" . $openPosition . "</option>";
                 } ?>
             </select>
         </div>
         <div class="field message required">
             <label class="label" for="message"><span><?= __('Message') ?></span></label>
             <div class="control">
-                <input name="message" id="message" title="<?= __('Message') ?>" class="input-text" type="text" data-validate="{required:true}" >
+                <input name="message" id="message" title="<?= __('Message') ?>" class="input-text" type="text"
+                       data-validate="{required:true}">
             </div>
         </div>
         <div class="actions-toolbar">
             <div class="primary" style="margin-top:7px;">
-                <button type="submit" class="action submit primary" title="Save"><span><?= __("Submit") ?></span></button>
+                <button type="submit" class="action submit primary" title="Save"><span><?= __("Submit") ?></span>
+                </button>
             </div>
         </div>
     </form>
