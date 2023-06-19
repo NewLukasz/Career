@@ -4,7 +4,11 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="main">
-            <block name="career.application.form" template="STLK_Career::application/form.phtml"/>
+            <block name="career.application.form" template="STLK_Career::application/form.phtml">
+                <arguments>
+                    <argument name="form_view_model" xsi:type="object">STLK\Career\ViewModel\Application\FormViewModel</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
