@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace STLK\Career\ViewModel\Application;
 
+use STLK\Career\Model\Config\ConfigProvider;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Framework\App\RequestInterface;
-use STLK\Career\Model\Config\ConfigProvider;
 
 class FormViewModel implements ArgumentInterface
 {

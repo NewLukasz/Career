@@ -28,7 +28,7 @@ class ConfigProvider extends AbstractHelper implements ConfigProviderInterface
      * @return string
      * @throws NoSuchEntityException
      */
-    public function getBaseUr() : string
+    public function getBaseUrl() : string
     {
         return $this->storeManager->getStore()->getBaseUrl();
     }
