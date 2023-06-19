@@ -3,49 +3,50 @@ declare(strict_types=1);
 /**
  * @var Magento\Framework\View\Element\Template $block
  * @var STLK\Career\ViewModel\Application\FormViewModel $formViewModel
+ * @var Magento\Framework\Escaper $espacer
  */
 $formViewModel = $block->getData('form_view_model');
 ?>
 
 <?php if ($formViewModel->checkIfFormSubmittedWithSuccess()): ?>
     <div class="career-application-form-success">
-        <h2><?= __('The form has been sent successfully.') ?></h2>
+        <h2><?= $espacer->escapeHtml(__('The form has been sent successfully.')); ?></h2>
     </div>
 <?php else: ?>
     <div class="career-application-form-fail">
-        <h2><?= __('Something went wrong contact with customer service office.') ?></h2>
+        <h2><?= $espacer->escapeHtml(__('Something went wrong contact with customer service office.')); ?></h2>
     </div>
 <?php endif; ?>
 <div class="career-application-form">
     <form
         class="application form"
-        action="<?= $block->getUrl('career/application/submit'); ?>"
+        action="<?= $espacer->escapeHtml($block->getUrl('career/application/submit')); ?>"
         id="application-form"
         method="post">
-        <h3><?= __('Application form') ?></h3>
+        <h3><?= $espacer->escapeHtml(__('Application form')); ?></h3>
         <div class="field name required">
-            <label class="label" for="name"><span><?= __('Name') ?></span></label>
+            <label class="label" for="name"><span><?= $espacer->escapeHtml(__('Name')); ?></span></label>
             <div class="control">
-                <input name="name" id="name" title="<?= __('Name') ?>" class="input-text" type="text"
+                <input name="name" id="name" title="<?= $espacer->escapeHtml(__('Name')); ?>" class="input-text" type="text"
                        data-validate="{required:true}">
             </div>
         </div>
         <div class="field surname required">
-            <label class="label" for="surname"><span><?= __('Surname') ?></span></label>
+            <label class="label" for="surname"><span><?= $espacer->escapeHtml(__('Surname')); ?></span></label>
             <div class="control">
-                <input name="surname" id="surname" title="<?= __('Surname') ?>" class="input-text" type="text"
+                <input name="surname" id="surname" title="<?= $espacer->escapeHtml(__('Surname')); ?>" class="input-text" type="text"
                        data-validate="{required:true}">
             </div>
         </div>
         <div class="field email required">
-            <label class="label" for="email"><span><?= __('Email address') ?></span></label>
+            <label class="label" for="email"><span><?= $espacer->escapeHtml(__('Email address')); ?></span></label>
             <div class="control">
-                <input name="email" id="email" title="<?= __('Email address') ?>" class="input-text" type="text"
+                <input name="email" id="email" title="<?= $espacer->escapeHtml(__('Email address')); ?>" class="input-text" type="text"
                        data-validate="{required:true, 'validate-email':true}">
             </div>
         </div>
         <div class="field positions">
-            <label class="label" for="surname"><span><?= __('Position') ?></span></label>
+            <label class="label" for="surname"><span><?= $espacer->escapeHtml(__('Position')); ?></span></label>
             <select name="position" id="position" data-validate="{required:true}">
                 <?php foreach ($formViewModel->getOpenPositions() as $openPosition) {
                     echo "<option value=" . $formViewModel->changeSpacesToUnderscoreForDivValue($openPosition) . " >" . $openPosition . "</option>";
@@ -53,15 +54,15 @@ $formViewModel = $block->getData('form_view_model');
             </select>
         </div>
         <div class="field message required">
-            <label class="label" for="message"><span><?= __('Message') ?></span></label>
+            <label class="label" for="message"><span><?= $espacer->escapeHtml(__('Message')); ?></span></label>
             <div class="control">
-                <input name="message" id="message" title="<?= __('Message') ?>" class="input-text" type="text"
+                <input name="message" id="message" title="<?= $espacer->escapeHtml(__('Message')); ?>" class="input-text" type="text"
                        data-validate="{required:true}">
             </div>
         </div>
         <div class="actions-toolbar">
             <div class="primary" style="margin-top:7px;">
-                <button type="submit" class="action submit primary" title="Save"><span><?= __("Submit") ?></span>
+                <button type="submit" class="action submit primary" title="Save"><span><?= $espacer->escapeHtml(__('Submit')); ?></span>
                 </button>
             </div>
         </div>
